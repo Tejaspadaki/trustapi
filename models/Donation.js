@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const donationSchema = new mongoose.Schema({
   name: String,
   email: String,
-  amount: Number,
+  message: String,
   date: { type: Date, default: Date.now }
 });
 
