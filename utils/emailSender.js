@@ -4,8 +4,8 @@ const nodemailer = require("nodemailer");
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: process.env.EMAIL_USER,   // Your email
-    pass: process.env.EMAIL_PASS,   // App password or email password
+    user: process.env.EMAIL_USER,   // e.g. your-email@gmail.com
+    pass: process.env.EMAIL_PASS,   // app password
   },
 });
 
@@ -37,7 +37,7 @@ async function sendContactEmail(data) {
       <h2 style="color: #2196F3;">New Contact Form Submission</h2>
       <p><strong>Name:</strong> ${data.name}</p>
       <p><strong>Email:</strong> ${data.email}</p>
-      <p><strong>Subject:</strong> ${data.phone|| "N/A"}</p>
+      <p><strong>Phone:</strong> ${data.phone || "N/A"}</p>
       <p><strong>Message:</strong> ${data.message}</p>
       <hr style="border:none; border-top:1px solid #eee;" />
       <p>Please follow up promptly!</p>
