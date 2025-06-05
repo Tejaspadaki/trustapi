@@ -1,14 +1,19 @@
 const express = require("express");
 const router = express.Router();
 const Contact = require("../models/Contact");
+const { sendContactEmail } = require("../utils/emailSender");
 
 router.post("/", async (req, res) => {
   try {
     const contact = new Contact(req.body);
     await contact.save();
-    res.status(201).json({ message: "Contact submitted successfully" });
+
+    await sendContactEmail(req.body);
+
+    res.status(201).json({ message: "Contact submitted successfully and email sent" });
   } catch (error) {
-    res.status(500).json({ error: "Failed to submit contact" });
+    console.error("Error:", error);
+    res.status(500).json({ error: "Failed to submit contact or send email" });
   }
 });
 
