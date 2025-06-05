@@ -16,7 +16,6 @@ async function sendDonationEmail(data) {
       <h2 style="color: #4CAF50;">New Donation Received</h2>
       <p><strong>Name:</strong> ${data.name}</p>
       <p><strong>Email:</strong> ${data.email}</p>
-      <p><strong>Amount:</strong> $${data.amount}</p>
       <p><strong>Message:</strong> ${data.message || "N/A"}</p>
       <hr style="border:none; border-top:1px solid #eee;" />
       <p>Thank you for your support!</p>
@@ -38,7 +37,6 @@ async function sendContactEmail(data) {
       <h2 style="color: #2196F3;">New Contact Form Submission</h2>
       <p><strong>Name:</strong> ${data.name}</p>
       <p><strong>Email:</strong> ${data.email}</p>
-      <p><strong>Subject:</strong> ${data.subject || "N/A"}</p>
       <p><strong>Message:</strong> ${data.message}</p>
       <hr style="border:none; border-top:1px solid #eee;" />
       <p>Please follow up promptly!</p>

@@ -1,8 +1,8 @@
 {
   "name": "contact_donate",
   "version": "1.0.0",
-  "main": "index.js",
-  "description": "",
+  "main": "server.js",
+  "description": "Backend server for contact and donate features",
   "author": "",
   "license": "ISC",
   "keywords": [],
